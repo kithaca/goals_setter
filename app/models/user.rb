@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, uniqueness: true, presence: true
 
+  has_many :goals
+
   after_initialize :ensure_session_token
 
   attr_reader :password

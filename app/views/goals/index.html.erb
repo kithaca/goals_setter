@@ -1,1 +1,8 @@
-Goals
+<h2>Goals</h2>
+
+<% current_user.goals.each do |goal| %>
+  <%= link_to goal.title, goal_url(goal) %>
+<% end %>
+
+
+<%= link_to "Create Goal", new_goal_url %>
