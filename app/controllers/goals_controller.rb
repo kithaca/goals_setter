@@ -24,7 +24,12 @@ class GoalsController < ApplicationController
     @goal = Goal.find_by_id(params[:id])
   end
 
+  def edit
+    @goal = Goal.find_by_id(params[:id])
+  end
+
   private
+
   def goal_params
     params.require(:goal).permit(:title, :details, :visible, :completed)
   end
